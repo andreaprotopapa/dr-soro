@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <title>Domain Randomization for Robust, Affordable and Effective Closed-loop Control of Soft Robots</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"  />
+    <link rel="stylesheet" type="text/css" href="assets/css/animatedBackground.css"  />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body>
+    <header>
+      
+      <div id="animContainer"></div>
+      <div id="headerBackground"></div>
+
+      <div id="elevatedContent">
+        <h1>Domain Randomization for Robust, Affordable and Effective Closed-loop Control of Soft Robots</h1>
+
+        <div id="linksContainer">
+          <a href="#" target="_blank" class="comingSoon">Paper</a> <!--<img src="assets/img/paper_icon2_64px.png"/>-->
+          <a href="https://github.com/andreaprotopapa/dr-soro" target="_blank" class="iconLink">Code <img src="assets/img/github_logo_light_64px.png"/></a>
+          <a href="#findingsSection" class="comingSoon">Findings</a>
+        </div>
+      </div>
+
+      <div id="videoContainer">
+        <div>
+          <video controls>
+            <source src="assets/video/soro_video_v4_trimmed_OFFICIAL.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </header>
+
+    <section id="main">
+      <div id="intro">
+        <p>
+          <strong><em>Abstract</em></strong><br/>
+          Soft robots are becoming extremely popular thanks to their intrinsic safety to contacts and adaptability. However, the potentially infinite number of Degrees of Freedom makes their modeling a daunting task, and in many cases only an approximated description is available. 
+          This challenge makes reinforcement learning (RL) based approaches inefficient when deployed on a realistic scenario, due to the large domain gap between models and the real platform. 
+          In this work, we demonstrate, for the first time, how Domain Randomization (DR) can solve this problem by enhancing RL policies with: i) a higher robustness w.r.t. environmental changes; ii) a higher affordability of learned policies when the target model differs significantly from the training model; iii) a higher effectiveness of the policy, which can even autonomously learn to exploit the environment to increase the robot capabilities (environmental constraints exploitation). 
+          Moreover, we introduce a novel algorithmic extension of previous adaptive domain randomization methods for the automatic inference of dynamics parameters for deformable objects.
+          We provide results on four different tasks and two soft robot designs, opening interesting perspectives for future research on Reinforcement Learning for closed-loop soft robot control.
+        </p>
+        <br/>
+        <p style="font-style: italic;">Authored by <a href="https://gabrieletiboni.com/" target="_blank" class="easyLink">Gabriele Tiboni</a>, Andrea Protopapa, <a href="http://www.tatianatommasi.com/" target="_blank" class="easyLink">Tatiana Tammasi</a>, <a href="https://scholar.google.com/citations?hl=en&user=i4rm0tYAAAAJ" target="_blank" class="easyLink">Giuseppe Averta</a>.
+        </p>
+      </div>
+
+      <div id="introImg">
+        <span>
+          <!-- <img src="assets/img/benchmark_overview.png"> -->
+          <img src="assets/gifs/multigait_simple_DR_cropped_x6.5.gif" />
+          <img src="assets/gifs/multigait_complex_DR_cropped_x6.5.gif" />
+        </span>
+        <span>
+          A policy is trained on a simplified model of the soft MultiGait robot design with domain randomization (DR) on the Poisson's Ratio, Young's Modulus and mass of its constituent materials. Later, the policy is evaluated on both (left) the simplified model and (right) the full accurate model, which is about ~8x slower. Training with DR allows to train policies on affordable models and transfer their behavior effectively to more accurate models, which resemble the real robot dynamics.
+        </span>
+      </div>
+
+      <!-- <div class="tab" id="findingsSection">
+          <h2>Findings</h2>
+          <div class="main-list">
+            <span>
+              <span class="index">#1</span>
+              <span class="content">
+                <span class="title">
+                  Offline methods are more data efficient
+                </span>
+                <span class="descr">
+                  Offline methods often reached the same long-term performance as online methods with as
+                  little as a single real trajectory. This wasn't necessarily true for DROID due to finding #4.
+                </span>
+              </span>
+            </span>
+            <span>
+              <span class="index">#2</span>
+              <span class="content">
+                <span class="title">
+                  Bayesian Optimization does not scale to high-dimensional tasks
+                </span>
+                <span class="descr">
+                 While successfully solving the Hopper task, Bayesian optimization (BayRN) would not scale to high-dimensional inference tasks with only 5 iterations. Such tasks include Half Cheetah, Walker2D and Humanoid which require inference of posterior distributions over 8, 13 and 30 dynamics parameters respectively.  
+                </span>
+              </span>
+              
+            </span>
+            <span>
+              <span class="index">#3</span>
+              <span class="content">
+                <span class="title">
+                  Online methods may fail unexpectedly due to bad intermediate policies
+                </span>
+                <span class="descr">
+                  Online methods such as BayRN and SimOpt may fail unexpectedly when policies learned at intermediate iterations fail to transfer to the target domain and do not collect informative data for inferring the desired dynamics parameters. This phenomenon occurred more frequently in complex tasks, e.g. Humanoid.
+                </span>
+              </span>
+            </span>
+            <span>
+              <span class="index">#4</span>
+              <span class="content">
+                <span class="title">
+                  Offline methods may fail when replaying offline commands in simulation 
+                </span>
+                <span class="descr">
+                  Offline methods would sometimes produce meaningless results when real-world commands are replayed in simulation (open loop) on missmatched dynamics, leading to divergent trajectories.<br/>
+                  Resetting the simulator state to each individual starting state when replaying offline trajectories—as in DROPO—seemed to solve the issue completely.
+                </span>
+              </span>
+            </span>
+          </div> 
+      </div> -->
+
+      <div class="tab">
+          <h2>Citing</h2>
+          <p class="comingSoon">
+            Coming Soon
+          </p>
+        <!-- <div class="bibtexContainer">
+<pre>
+@InProceedings{tiboniadrbenchmark,
+  author="Tiboni, Gabriele and Arndt, Karol and Averta, Giuseppe and Kyrki, Ville and Tommasi, Tatiana",
+  editor="Borja, Pablo and Della Santina, Cosimo and Peternel, Luka and Torta, Elena",
+  title="Online vs. Offline Adaptive Domain Randomization Benchmark",
+  booktitle="Human-Friendly Robotics 2022",
+  year="2023",
+  publisher="Springer International Publishing",
+  address="Cham",
+  pages="158--173",
+  isbn="978-3-031-22731-8"
+}
+</pre>
+          </div> -->
+      </div>
+    </section>
+
+    <footer>
+      If you have any questions, please contact us at <a href="mailto:gabriele.tiboni@polito.it" class="easyLink">gabriele.tiboni@polito.it</a>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+      const init_brad = 35;
+      $('#headerBackground').css("border-radius", init_brad+"%");
+      $('#animContainer').css("border-radius", init_brad+"%");
+
+      // check if viewport is mobile or desktop
+      const isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+      const isTablet = window.matchMedia("only screen and (max-width: 1024px)").matches;
+      
+
+      function init() {
+        loadAnimatedBackground();
+
+        if (!isMobile && !isTablet) {
+          $('body').on('scroll', function() {
+            var scroll = $('body').scrollTop();
+            var viewportHeight = $(window).height();  // get viewport height
+
+            // max_brad = 35;
+            new_brad = init_brad - ((init_brad/viewportHeight) * scroll)
+            if (scroll <= viewportHeight) {
+              $("#headerBackground").css("border-radius", new_brad+"%");
+              $('#animContainer').css("border-radius", new_brad+"%");
+            }
+          });
+        }
+      }
+
+      //scroll to div
+      $('a[href^="#"]').on('click', function(event) {
+
+          var target = $( $(this).attr('href') );
+
+          if( target.length ) {
+              event.preventDefault();
+              $('html, body').animate({
+                  // scrollTop: target.offset().top - 30
+                  scrollTop: target.offset().top+$('body').scrollTop()-10
+              }, 600);
+          }
+
+      });
+
+
+      function loadAnimatedBackground() {
+        $("#animContainer").load("assets/include/animatedBackground.html"); 
+      }
+
+      init();      
+    </script>
+  </body>
+</html>
