@@ -12,7 +12,7 @@ In this work, we demonstrate, for the first time, how Domain Randomization (DR) 
 Moreover, we introduce a novel algorithmic extension of previous adaptive domain randomization methods for the automatic inference of dynamics parameters for deformable objects.
 We provide results on four different tasks and two soft robot designs, opening interesting perspectives for future research on Reinforcement Learning for closed-loop soft robot control. [Watch video](https://andreaprotopapa.github.io/dr-soro/)
 
-<img src="https://www.gabrieletiboni.com/assets/online_vs_offline_adr_compact.png" style="width: 90%; max-width: 900px;" />
+<img src="https://www.gabrieletiboni.com/assets/multigait_complex_shadow_v3.png" style="width: 50%; max-width: 360px;" />
 
 Our release is **under construction**, you can track its progress below:
 
