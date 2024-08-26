@@ -1,6 +1,6 @@
 # Domain Randomization for Robust, Affordable and Effective Closed-loop Control of Soft Robots
 
-[Preprint](https://arxiv.org/abs/2303.04136) / [Website](https://andreaprotopapa.github.io/dr-soro/) / [Video](https://andreaprotopapa.github.io/dr-soro/)
+[Paper](https://ieeexplore.ieee.org/document/10342537) / [Preprint](https://arxiv.org/abs/2303.04136) / [Website](https://andreaprotopapa.github.io/dr-soro/) / [Video](https://andreaprotopapa.github.io/dr-soro/)
 
 ##### Gabriele Tiboni, Andrea Protopapa, Tatiana Tommasi, Giuseppe Averta.
 
@@ -26,13 +26,13 @@ Our release is **under construction**, you can track its progress below:
 ## Cite us
 If you use this repository, please consider citing
 ```
-@misc{tiboni2023dr_soro,
-  doi = {10.48550/ARXIV.2303.04136},
-  title = {Domain Randomization for Robust, Affordable and Effective Closed-loop Control of Soft Robots},
-  author = {Tiboni, Gabriele and Protopapa, Andrea and Tommasi, Tatiana and Averta, Giuseppe},  
-  keywords = {Robotics (cs.RO), Machine Learning (cs.LG), FOS: Computer and information sciences, FOS: Computer and information sciences},  
-  publisher = {arXiv},  
-  year = {2023}
+@inproceedings{tiboni2023domain,
+  title={Domain randomization for robust, affordable and effective closed-loop control of soft robots},
+  author={Tiboni, Gabriele and Protopapa, Andrea and Tommasi, Tatiana and Averta, Giuseppe},
+  booktitle={2023 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  pages={612--619},
+  year={2023},
+  organization={IEEE}
 }
 ```
 
