@@ -2,9 +2,9 @@
 
 [Paper](https://ieeexplore.ieee.org/document/10342537) / [Preprint](https://arxiv.org/abs/2303.04136) / [Website](https://andreaprotopapa.github.io/dr-soro/) / [Video](https://andreaprotopapa.github.io/dr-soro/)
 
-##### Gabriele Tiboni, Andrea Protopapa, Tatiana Tommasi, Giuseppe Averta.
+##### Gabriele Tiboni, Andrea Protopapa, Tatiana Tommasi, Giuseppe Averta - IROS2023
 
-This repository contains the code for the paper "Domain Randomization for Robust, Affordable and Effective Closed-loop Control of Soft Robots".
+This repository presents the paper "Domain Randomization for Robust, Affordable and Effective Closed-loop Control of Soft Robots".
 
 *Abstract:* Soft robots are becoming extremely popular thanks to their intrinsic safety to contacts and adaptability. However, the potentially infinite number of Degrees of Freedom makes their modeling a daunting task, and in many cases only an approximated description is available. 
 This challenge makes reinforcement learning (RL) based approaches inefficient when deployed on a realistic scenario, due to the large domain gap between models and the real platform. 
@@ -14,13 +14,13 @@ We provide results on four different tasks and two soft robot designs, opening i
 
 <img src="https://www.gabrieletiboni.com/assets/multigait_complex_shadow_v3.png" style="width: 50%; max-width: 360px;" />
 
-Our release is **under construction**, you can track its progress below:
+Our release is has been developed into the repo [sofa-dr-rl](https://github.com/andreaprotopapa/sofa-dr-rl), where you can find:
 
-- [ ] SOFA gym environments (TrunkReach, TrunkPush, TrunkLift)
-- [ ] Code
-	- [ ] RL training
-	- [ ] DR compatibility
-	- [ ] Reset-free DROPO
+- ✅ SOFA gym environments (TrunkReach, TrunkPush, TrunkLift)
+- Code
+	- ✅ RL training
+	- ✅ DR compatibility
+	- ✅ Reset-free DROPO
 
 
 ## Cite us
